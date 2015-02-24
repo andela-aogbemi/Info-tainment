@@ -36,7 +36,7 @@ $(document).ready(function() {
 			$.getJSON(imageUrl, function (picture) {
 				$.each(picture.response.images, function (i, images) {
 					$("<div id='pix'><img src='" + images.url + "'></div>").appendTo("#pix");
-				})
+				});
 			});
 
 			var musicUrl = "http://developer.echonest.com/api/v4/artist/songs?api_key=4RTU0ONFIDEQOQTMM&name=" + input + "&format=json&start=0&results=40";
