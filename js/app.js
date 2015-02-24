@@ -9,6 +9,9 @@ $(document).ready(function() {
 			$("#details").empty();
 			$("#picture").empty();
 			$("#date").empty();
+			$("#tracks").empty();
+			$("#pix").empty();
+			$("#information").empty();
 			var searchInput = showsAndMusic.showName.val().trim();
 			console.log(searchInput);
 
@@ -28,6 +31,10 @@ $(document).ready(function() {
 			$("#tracks").empty();
 			$("#pix").empty();
 			$("#details").empty();
+			$("#picture").empty();
+			$("#information").empty();
+			$("#date").empty();
+
 			var input = showsAndMusic.musicInfo.val().trim();
 			console.log(input);
 
@@ -45,7 +52,7 @@ $(document).ready(function() {
 				$.each(reply.response.songs, function (i, songs) {
 				console.log("all songs: " + songs.title);
 				$("<li id='songs'>" + songs.title + "</li>").appendTo("#tracklist");
-				$("ul").appendTo("#tracks");
+				$("<ul id='tracklist'></ul>").appendTo("#tracks");
 				});
 			});	
 
@@ -53,7 +60,7 @@ $(document).ready(function() {
 			$.getJSON(artistUrl, function (bio) {
 				console.log(bio);
 				$.each(bio.response.biographies, function (i, biographies) {
-					$("<p id='story'>" + biographies.text + "</p>").appendTo("#details");
+					$("<p id='story'>" + biographies.text + "</p>").appendTo("#information");
 				});
 			});
 		}
